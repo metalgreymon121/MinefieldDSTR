@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         //connect MainActivity with xml buttons
         ImageButton start = (ImageButton) findViewById(R.id.buttonStart);
         ImageButton pause = (ImageButton) findViewById(R.id.buttonPause);
@@ -41,12 +43,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pause.setOnClickListener(this);
         stop.setOnClickListener(this);
 
-        //place screenfragment
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ScreenFragment screenFragment = ScreenFragment.newInstance();
         fragmentTransaction.replace(R.id.content_frame, screenFragment);
         fragmentTransaction.commit();
+
+
+
     }
 
     @Override

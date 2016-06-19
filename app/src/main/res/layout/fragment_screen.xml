@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.entc489.marcomendiola.minefielddstr.ScreenFragment">
 
-    <android.opengl.GLSurfaceView
-        android:id="@+id/glSurfaceView"
+    <com.entc489.marcomendiola.minefielddstr.PixelGridView
+        android:id="@+id/pixelGridView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/border" />
+        android:background="@drawable/border"/>
 </FrameLayout>
