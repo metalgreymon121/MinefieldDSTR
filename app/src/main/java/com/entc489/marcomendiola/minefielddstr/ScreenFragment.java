@@ -1,12 +1,27 @@
 package com.entc489.marcomendiola.minefielddstr;
 
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.os.Bundle;
+import android.view.*;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 /**
  * This fragment is in charge of drawing the basketball court.
@@ -16,15 +31,20 @@ import android.view.ViewGroup;
  */
 public class ScreenFragment extends Fragment {
 
+    TheCanvas theCanvas;
+    TheThread thread;
+    String screenXY = ",";
     int amountofMinesFound = 0;
-    DSTR DSTR1 = new DSTR(0, 0, false);
-    DSTR DSTR2 = new DSTR(0, 0, false);
-    DSTR DSTR3 = new DSTR(0, 0, false);
-    DSTR DSTR4 = new DSTR(0, 0, false);
+
+    int fragmentWidth;
+    int fragmentHeight;
+    int calls;
+    int percent;
 
     //create a new instance of this fragment
     public static ScreenFragment newInstance() {
         ScreenFragment fragment = new ScreenFragment();
+
         return fragment;
     }
 
@@ -32,14 +52,22 @@ public class ScreenFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        PixelGridView pixelGridView = new PixelGridView(getActivity());
-        pixelGridView.findViewById(R.id.pixelGridView);
-        pixelGridView.setNumColumns(8);
-        pixelGridView.setNumRows(8);
-
-        return pixelGridView;
+        View view = inflater.inflate(R.layout.fragment_screen, container, false);
+        theCanvas = (TheCanvas) view.findViewById(R.id.theCanvas);
+        return view;
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//       theCanvas.unpause();
+//    }
+
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        theCanvas.pause();
+//    }
 
 
 }

@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 /*
 * This class will call the screen fragment,
@@ -49,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ScreenFragment screenFragment = ScreenFragment.newInstance();
         fragmentTransaction.replace(R.id.content_frame, screenFragment);
         fragmentTransaction.commit();
-
-
 
     }
 
